@@ -6,6 +6,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = ("com.ncorti.kotlin.gradle.template")
+rootProject.name = ("io.testaxis.coveragepertest")
 
 include(":plugin")

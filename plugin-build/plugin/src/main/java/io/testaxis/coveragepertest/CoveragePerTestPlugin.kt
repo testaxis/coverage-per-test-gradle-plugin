@@ -1,18 +1,18 @@
-package com.ncorti.kotlin.gradle.template.plugin
+package io.testaxis.coveragepertest
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-const val EXTENSION_NAME = "templateExampleConfig"
-const val TASK_NAME = "templateExample"
+const val EXTENSION_NAME = "coveragePerTestConfig"
+const val TASK_NAME = "coveragePerTest"
 
-abstract class TemplatePlugin : Plugin<Project> {
+abstract class CoveragePerTestPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         // Add the 'template' extension object
-        val extension = project.extensions.create(EXTENSION_NAME, TemplateExtension::class.java, project)
+        val extension = project.extensions.create(EXTENSION_NAME, CoveragePerTestExtension::class.java, project)
 
         // Add a task that uses configuration from the extension object
-        project.tasks.register(TASK_NAME, TemplateExampleTask::class.java) {
+        project.tasks.register(TASK_NAME, CoveragePerTestTask::class.java) {
             it.tag.set(extension.tag)
             it.message.set(extension.message)
             it.outputFile.set(extension.outputFile)

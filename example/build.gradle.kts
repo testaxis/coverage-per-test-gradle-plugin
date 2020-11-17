@@ -1,8 +1,8 @@
 plugins {
     java
-    id("com.ncorti.kotlin.gradle.template.plugin")
+    id("io.testaxis.coveragepertest")
 }
 
-templateExampleConfig {
+coveragePerTestConfig {
     message.set("Just trying this gradle plugin...")
 }
