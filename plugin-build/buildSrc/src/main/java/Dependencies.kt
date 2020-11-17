@@ -1,6 +1,7 @@
 object Versions {
-    const val JUNIT = "4.13.1"
+    const val JUNIT = "5.7.0"
     const val KTLINT = "0.39.0"
+    const val ASSERTJ = "3.18.0"
 }
 
 object BuildPluginsVersion {
@@ -12,5 +13,7 @@ object BuildPluginsVersion {
 }
 
 object TestingLib {
-    const val JUNIT = "junit:junit:${Versions.JUNIT}"
+    const val JUNIT_API = "org.junit.jupiter:junit-jupiter-api:${Versions.JUNIT}"
+    const val JUNIT_ENGINE = "org.junit.jupiter:junit-jupiter-engine:${Versions.JUNIT}"
+    const val ASSERTJ = "org.assertj:assertj-core:${Versions.ASSERTJ}"
 }

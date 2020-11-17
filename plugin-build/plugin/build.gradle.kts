@@ -2,13 +2,16 @@ plugins {
     kotlin("jvm")
     id("java-gradle-plugin")
     id("com.gradle.plugin-publish")
+    jacoco
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk7"))
     implementation(gradleApi())
 
-    testImplementation(TestingLib.JUNIT)
+    testImplementation(TestingLib.JUNIT_API)
+    testRuntimeOnly(TestingLib.JUNIT_ENGINE)
+    testImplementation(TestingLib.ASSERTJ)
 }
 
 java {
@@ -52,4 +55,12 @@ tasks.create("setupPluginUploadFromEnvironment") {
         System.setProperty("gradle.publish.key", key)
         System.setProperty("gradle.publish.secret", secret)
     }
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "0.8.6"
 }

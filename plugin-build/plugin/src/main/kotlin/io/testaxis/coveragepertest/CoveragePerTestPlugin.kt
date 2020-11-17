@@ -13,9 +13,8 @@ abstract class CoveragePerTestPlugin : Plugin<Project> {
 
         // Add a task that uses configuration from the extension object
         project.tasks.register(TASK_NAME, CoveragePerTestTask::class.java) {
-            it.tag.set(extension.tag)
-            it.message.set(extension.message)
-            it.outputFile.set(extension.outputFile)
+            it.inputDirectory.set(extension.inputDirectory)
+            it.outputDirectory.set(extension.outputDirectory)
         }
     }
 }
