@@ -1,7 +1,7 @@
 object PluginCoordinates {
     const val ID = "io.testaxis.coveragepertest"
     const val GROUP = "io.testaxis"
-    const val VERSION = "1.0.0-SNAPSHOT"
+    const val VERSION = "1.0.0-RC1"
     const val IMPLEMENTATION_CLASS = "io.testaxis.coveragepertest.CoveragePerTestPlugin"
 }
 
