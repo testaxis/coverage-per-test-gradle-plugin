@@ -88,6 +88,7 @@ bintray {
     user = project.findProperty("bintrayUser").toString()
     key = project.findProperty("bintrayKey").toString()
     publish = true
+    override = true
 
     setPublications("coverage-per-test-runtime")
 
