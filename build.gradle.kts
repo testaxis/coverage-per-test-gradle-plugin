@@ -71,4 +71,5 @@ tasks.register("preMerge") {
     dependsOn(":example:check")
     dependsOn(gradle.includedBuild("plugin-build").task(":plugin:check"))
     dependsOn(gradle.includedBuild("plugin-build").task(":plugin:validatePlugins"))
+    dependsOn(":runtime:check")
 }

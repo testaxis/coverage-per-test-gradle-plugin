@@ -1,14 +1,13 @@
-package com.example
+package io.testaxis.coveragepertest.runtime
 
 import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 import java.io.File
 
-class CoveragePerTestJUnitExtension : BeforeEachCallback, AfterEachCallback {
+class JUnit5Extension : BeforeEachCallback, AfterEachCallback {
     override fun beforeEach(context: ExtensionContext) {
         val testIdentifier = context.requiredTestMethod.run {
-            // TODO: use more appropriate (unsupported in method names) separator
             "${declaringClass.typeName}##$name"
         }
 

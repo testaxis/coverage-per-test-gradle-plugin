@@ -14,6 +14,8 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
+    testRuntimeOnly(project(":runtime"))
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
     testImplementation("org.assertj:assertj-core:3.18.0")

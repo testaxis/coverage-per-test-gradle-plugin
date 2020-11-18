@@ -10,3 +10,4 @@ rootProject.name = ("coverage-per-test")
 
 include(":example")
 includeBuild("plugin-build")
+include("runtime")
