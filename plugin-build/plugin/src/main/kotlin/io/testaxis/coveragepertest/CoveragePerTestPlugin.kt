@@ -5,7 +5,7 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.ApplicationPlugin
 
 const val EXTENSION_NAME = "coveragePerTestConfig"
-const val TASK_NAME = "coveragePerTest"
+const val TASK_NAME = "coveragePerTestReport"
 const val RUNTIME_VERSION = "0.0.1"
 
 abstract class CoveragePerTestPlugin : Plugin<Project> {
@@ -14,7 +14,7 @@ abstract class CoveragePerTestPlugin : Plugin<Project> {
 
         val extension = project.extensions.create(EXTENSION_NAME, CoveragePerTestExtension::class.java, project)
 
-        project.tasks.register(TASK_NAME, CoveragePerTestTask::class.java) {
+        project.tasks.register(TASK_NAME, CoveragePerTestReportTask::class.java) {
             it.inputDirectory.set(extension.inputDirectory)
             it.outputDirectory.set(extension.outputDirectory)
         }

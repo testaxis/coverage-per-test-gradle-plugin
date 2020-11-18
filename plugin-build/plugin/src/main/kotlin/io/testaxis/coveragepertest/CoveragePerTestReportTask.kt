@@ -17,7 +17,7 @@ inline fun <reified U : Any> PolymorphicDomainObjectContainer<in U>.create(
     noinline configuration: U.() -> Unit
 ) = this.create(name, U::class.java, configuration)
 
-abstract class CoveragePerTestTask : DefaultTask() {
+abstract class CoveragePerTestReportTask : DefaultTask() {
 
     @get:InputDirectory
     abstract val inputDirectory: DirectoryProperty
