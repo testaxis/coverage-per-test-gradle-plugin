@@ -55,12 +55,10 @@ abstract class CoveragePerTestTask : DefaultTask() {
     fun generateReports() {
         outputDirectory.asFile.get().mkdirs()
 
-        println("tesst")
-
         inputDirectory.asFile.get()
             .listFiles()
             ?.filter { it.isFile }
-            ?.filter { println(it.extension); it.extension == "exec" }
+            ?.filter { it.extension == "exec" }
             .let { files ->
                 if (files.isNullOrEmpty()) {
                     logger.error("No Jacoco .exec files were found in ${inputDirectory.asFile.get().path}.")
