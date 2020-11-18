@@ -27,13 +27,13 @@ abstract class CoveragePerTestTask : DefaultTask() {
 
     private lateinit var currentExecFile: File
 
-    private val jacocoDbTestReport: JacocoReport
+    private val jacocoPerTestReport: JacocoReport
 
     init {
         description = "Generate coverage reports per test."
         group = LifecycleBasePlugin.VERIFICATION_GROUP
 
-        jacocoDbTestReport = project.tasks.create<JacocoReport>("jacocoDbTestReport") {
+        jacocoPerTestReport = project.tasks.create<JacocoReport>("jacocoPerTestReport") {
             reports {
                 it.xml.isEnabled = true
                 it.xml.setDestination(
@@ -68,7 +68,7 @@ abstract class CoveragePerTestTask : DefaultTask() {
                 files.forEach { file ->
                     logger.info("Generating report for $file.")
                     this.currentExecFile = file
-                    jacocoDbTestReport.generate()
+                    jacocoPerTestReport.generate()
                 }
             }
     }
